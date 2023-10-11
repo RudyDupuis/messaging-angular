@@ -77,4 +77,10 @@ textarea {
     border: 2px solid $secondary-color;
     cursor: pointer;
   }
+
+  &:disabled {
+    background: #595a5b;
+    border: 2px solid #595a5b;
+    cursor: not-allowed;
+  }
 }

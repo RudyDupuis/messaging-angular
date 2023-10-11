@@ -1,7 +1,11 @@
 <h2>Nouveau message :</h2>
 
-<form (ngSubmit)="onSubmit()">
-    <input [(ngModel)]="pseudo" name="pseudo" type="text" placeholder="Pseudo" required />
-    <textarea [(ngModel)]="message" name="message" placeholder="Votre message" required></textarea>
-    <input type="submit" value="Envoyer" />
+<form [formGroup]="messageForm" (ngSubmit)="onSubmit()">
+    <input type="text" placeholder="Pseudo" formControlName="pseudo" />
+    <textarea formControlName="message" placeholder="Votre message"></textarea>
+    <input type="submit" value="Envoyer" [disabled]="!messageForm.valid" />
+    <p>
+        <span *ngIf="invalidField('pseudo')">Le pseudo est obligatoire </span>
+        <span *ngIf="invalidField('message')">Le message est obligatoire</span>
+    </p>
 </form>
