@@ -1,0 +1,8 @@
+<section class="message-list">
+    <p *ngIf="messages.length == 0">Il n'y a pas de message !</p>
+
+    <div *ngFor="let m of messages" class="message">
+        <p>{{m[0]}} a écrit le {{m[1] | date:'dd/MM/yy'}}</p>
+        <p class="message__txt">{{m[2]}}</p>
+    </div>
+</section>

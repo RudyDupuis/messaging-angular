@@ -1,0 +1,7 @@
+<h2>Nouveau message :</h2>
+
+<form (ngSubmit)="onSubmit()">
+    <input [(ngModel)]="pseudo" name="pseudo" type="text" placeholder="Pseudo" required />
+    <textarea [(ngModel)]="message" name="message" placeholder="Votre message" required></textarea>
+    <input type="submit" value="Envoyer" />
+</form>

@@ -1,0 +1,11 @@
+<h2>Personnes actives :</h2>
+
+<ul>
+    <li *ngIf="users.length == 0">
+        Il n'y a pas d'utilisateur
+    </li>
+
+    <li *ngFor="let u of users">
+        {{u}}
+    </li>
+</ul>
